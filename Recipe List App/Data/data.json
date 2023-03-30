@@ -1,0 +1,10 @@
+[
+    {
+        "name":"Spagetti",
+        "cuisine": "Italian"
+    },
+    {
+        "name":"Sushi",
+        "cuisine": "Japanese"
+    }
+]
