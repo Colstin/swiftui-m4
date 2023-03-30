@@ -24,6 +24,7 @@
 		D6CA476C29D21E9600D68994 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		D6CA476E29D2227200D68994 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D6CA477329D36ACB00D68994 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		D6DBD52329D5FA1D007B8667 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D6DC273C29CD5C64007A24C6 /* Recipe List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DC273F29CD5C64007A24C6 /* Recipe_List_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_List_App.swift; sourceTree = "<group>"; };
 		D6DC274129CD5C64007A24C6 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		D6DC273329CD5C64007A24C6 = {
 			isa = PBXGroup;
 			children = (
+				D6DBD52329D5FA1D007B8667 /* README.md */,
 				D6DC273E29CD5C64007A24C6 /* Recipe List App */,
 				D6DC273D29CD5C64007A24C6 /* Products */,
 			);
