@@ -26,8 +26,9 @@ struct RecipeDetailView: View {
                     .font(.headline)
                     .padding(.bottom)
                 
-                ForEach(recipe.ingredients, id: \.self){ item in
-                    Text("•" + item)
+                ForEach(recipe.ingredients){ item in
+                    Text("•" + item.name)
+             
                 }
             }
             
@@ -57,7 +58,7 @@ struct RecipeDetailView_Previews: PreviewProvider {
         
         let model = RecipeModel()
         
-        RecipeDetailView(recipe: model.recipes[2])
+        RecipeDetailView(recipe: model.recipes[0])
         
     }
 }

@@ -21,7 +21,7 @@ class DataService {
         //7. OPIONAL: set unique ID's for each instance ( IF NEEDED)
         
         // #1
-        let pathString = Bundle.main.path(forResource: "recipes", ofType: "json")
+        let pathString = Bundle.main.path(forResource: "recipes2", ofType: "json")
         
         // #2
         guard pathString != nil else{
@@ -46,6 +46,11 @@ class DataService {
                 // #7
                 for r in recipeData{
                     r.id = UUID()
+                    
+                    //Adding unique ID to ingredients model 
+                    for i in r.ingredients {
+                        i.id = UUID()
+                    }
                 }
                 
                 //final
