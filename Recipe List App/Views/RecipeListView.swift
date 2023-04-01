@@ -10,10 +10,11 @@ import SwiftUI
 struct RecipeListView: View {
     
     //indicate that we want to listen for any published changes from that object.
-    @ObservedObject var model = RecipeModel()
+    //@ObservedObject var model = RecipeModel()
+    @EnvironmentObject var model:RecipeModel
     
     var body: some View {
-       
+   
         NavigationView {
             List(model.recipes){ r in
                 NavigationLink {
@@ -32,12 +33,14 @@ struct RecipeListView: View {
             }
             .navigationTitle("All Recipes")
         }// nav-view
+        
     }//body
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeListView()
+            .environmentObject(RecipeModel())
     }
 }
 
