@@ -19,7 +19,6 @@ struct RecipeTabView: View {
                     }
                 }
             RecipeListView()
-   
                 .tabItem{
                     VStack{
                         Image(systemName: "list.bullet")

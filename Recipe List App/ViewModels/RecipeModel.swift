@@ -47,47 +47,4 @@ func addRecipe(){
 }
 
  
- // keep for a second
- 
-
- //1. get the path to the json file
- let pathString = Bundle.main.path(forResource: "data", ofType: "json")
- 
- // checks it's not nil
- if let path = pathString {
-     //2. Create url object
-     let url = URL(filePath: path)
-     
-     
-     //Error Handling basically a try catch
-     do{
-         //3. create a data object with the data at the url
-         let data = try Data(contentsOf: url)
-         
-         // 4. parse the data
-         let decoder = JSONDecoder()
-         
-         do{
-             let recipeData = try decoder.decode([Recipe].self, from: data)
-             
-             //5. set unique ID's for each instance
-             for r in recipeData {
-                 r.id = UUID()
-             }
-             
-             self.recipes = recipeData
-             
-         }catch{
-             // Log: Couldn't decode json
-             print(error)
-         }
-         
-
-     } catch{
-         // Log: couldn't find the file
-         print(error)
-     }
- }// Main if to check null
- 
- 
 */
