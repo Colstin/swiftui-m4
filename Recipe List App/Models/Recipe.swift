@@ -24,6 +24,7 @@ class Recipe:Identifiable, Decodable{
     
 }
 
+//This is the ingredients array inside line 22
 class Ingredient: Identifiable, Decodable{
     var id:UUID?
     var name:String

@@ -25,8 +25,66 @@ class RecipeModel: ObservableObject{
         
     }
     
-    func addRecipe(){
+    static func getPortion(ingredient:Ingredient, recipeServing:Int, targetServings:Int) -> String{
  
+        var portion = ""
+        var numerator = ingredient.num ?? 1
+        var denominator = ingredient.denom ?? 1
+        var wholePortions = 0
+        
+        if ingredient.num != nil{
+            //Get a single serving size by mult denom by recipe servings
+            denominator *= recipeServing
+            
+            // Get target portion by multiplying num by target servings
+            numerator *= targetServings
+            
+            // Reduct fraction by GCD
+            
+            let divisor = GCD.greatesCommonDivisor(numerator, denominator)
+            numerator /= divisor
+            denominator /= divisor
+            
+            // Get the whle portion if num > denom
+            if numerator >= denominator{
+                // Calc. whole portions
+                wholePortions = numerator / denominator
+                // Calc. the remainder
+                numerator = numerator % denominator
+                
+                portion += String(wholePortions)
+            }
+            
+            // Express the Remainder as a fraction
+            if numerator > 0{
+                
+                portion += wholePortions > 0 ? " ": ""
+                portion += "\(numerator)/\(denominator)"
+            }
+            
+            
+        }// if
+        
+        if var unit = ingredient.unit{
+                        
+            if wholePortions > 1 {
+                if unit.suffix(2) == "ch"{
+                    unit += "es"
+                } else if unit.suffix(1) == "f" {
+                    unit = String(unit.dropLast())
+                    unit += "ves"
+                } else{
+                    unit += "s"
+                }
+            }
+            
+            
+            portion += ingredient.num == nil && ingredient.denom == nil ? "": " "
+            
+            return portion + unit
+        }
+        
+        return portion
     }
 }
 
