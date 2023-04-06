@@ -21,7 +21,7 @@ struct RecipeFeaturedView: View {
             Text("Featured Recipes")
                 .padding(.leading)
                 .padding(.top, 40)
-                .font(.largeTitle)
+                .font(Font.custom("Avenir Heavy", size: 24))
                 .fontWeight(.bold)
             
             GeometryReader { geo in
@@ -67,14 +67,15 @@ struct RecipeFeaturedView: View {
             
             VStack(alignment: .leading, spacing: 10){
                 Text("Prep Time:")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 Text(model.recipes[tabSelectedIndex].prepTime)
                 Text("highlights")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 RecipeHighlights(highlights: model.recipes[tabSelectedIndex].highlights)
             }
             .padding([.leading, .bottom])
         }
+            .font(Font.custom("Avenir", size: 15))
         .onAppear {
             setFeaturedIndex()
         }

@@ -24,7 +24,7 @@ struct RecipeDetailView: View {
                 Text(recipe.name)
                     .padding(.top, 40)
                     .padding(.leading)
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir Heavy", size: 24))
                     .fontWeight(.bold)
                 
                 //MARK: Serving Size Picker
@@ -46,7 +46,7 @@ struct RecipeDetailView: View {
                 //MARK: Ingredients
                 VStack(alignment: .leading){
                     Text("Ingredients")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding(.bottom)
                     
                     ForEach(recipe.ingredients){ item in
@@ -62,7 +62,7 @@ struct RecipeDetailView: View {
                 //MARK: Direction
                 VStack(alignment: .leading){
                     Text("Directions")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding(.vertical, 5)
                     
                     ForEach(0..<recipe.directions.count, id: \.self){ i in
@@ -74,6 +74,7 @@ struct RecipeDetailView: View {
                 .padding(.horizontal)
                 
             }
+            .font(Font.custom("Avenir", size: 15))
         }// Scroll View
         .navigationTitle(recipe.name)
     }
