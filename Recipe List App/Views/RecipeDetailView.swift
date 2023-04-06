@@ -21,6 +21,12 @@ struct RecipeDetailView: View {
                 .frame(height: 200.0, alignment: .center)
                 //.scaledToFit()
                 
+                Text(recipe.name)
+                    .padding(.top, 40)
+                    .padding(.leading)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                
                 //MARK: Serving Size Picker
                 VStack(alignment: .leading) {
                     Text("Select Your Serving Size:")
